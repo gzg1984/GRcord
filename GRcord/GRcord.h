@@ -6,8 +6,8 @@
 //  Copyright © 2017年 高志刚. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface GRcord : NSObject
-
+@property (nonatomic) BOOL GRcordRecording;
 @end

@@ -8,17 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		9E750CC01FF74C8E00012828 /* GRcord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E750CBF1FF74C8E00012828 /* GRcord.m */; };
-		9E750CC11FF74C8E00012828 /* GRcord.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9E750CBE1FF74C8E00012828 /* GRcord.h */; };
+		9E750CC11FF74C8E00012828 /* GRcord.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 9E750CBE1FF74C8E00012828 /* GRcord.h */; };
+		9E750CC91FF74D1C00012828 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E750CC81FF74D1C00012828 /* UIKit.framework */; };
+		9E750CCB1FF74DF900012828 /* GRcord.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E750CBE1FF74C8E00012828 /* GRcord.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9ED9488A204A6ADC00CE95B2 /* libGRcord.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9E750CBB1FF74C8E00012828 /* libGRcord.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9E750CB91FF74C8E00012828 /* CopyFiles */ = {
+		9E750CB91FF74C8E00012828 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
+			dstPath = /Users/Shared/include;
+			dstSubfolderSpec = 0;
 			files = (
-				9E750CC11FF74C8E00012828 /* GRcord.h in CopyFiles */,
+				9E750CC11FF74C8E00012828 /* GRcord.h in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ED94889204A6A1400CE95B2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /Users/Shared/lib;
+			dstSubfolderSpec = 0;
+			files = (
+				9ED9488A204A6ADC00CE95B2 /* libGRcord.a in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -28,6 +42,7 @@
 		9E750CBB1FF74C8E00012828 /* libGRcord.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGRcord.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E750CBE1FF74C8E00012828 /* GRcord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRcord.h; sourceTree = "<group>"; };
 		9E750CBF1FF74C8E00012828 /* GRcord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRcord.m; sourceTree = "<group>"; };
+		9E750CC81FF74D1C00012828 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E750CC91FF74D1C00012828 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +62,7 @@
 			children = (
 				9E750CBD1FF74C8E00012828 /* GRcord */,
 				9E750CBC1FF74C8E00012828 /* Products */,
+				9E750CC71FF74D1C00012828 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,7 +83,26 @@
 			path = GRcord;
 			sourceTree = "<group>";
 		};
+		9E750CC71FF74D1C00012828 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E750CC81FF74D1C00012828 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9E750CCA1FF74DEF00012828 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E750CCB1FF74DF900012828 /* GRcord.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		9E750CBA1FF74C8E00012828 /* GRcord */ = {
@@ -75,7 +111,9 @@
 			buildPhases = (
 				9E750CB71FF74C8E00012828 /* Sources */,
 				9E750CB81FF74C8E00012828 /* Frameworks */,
-				9E750CB91FF74C8E00012828 /* CopyFiles */,
+				9E750CB91FF74C8E00012828 /* Copy Files */,
+				9ED94889204A6A1400CE95B2 /* CopyFiles */,
+				9E750CCA1FF74DEF00012828 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -134,6 +172,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -182,6 +222,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 			};
 			name = Debug;
 		};
@@ -189,6 +230,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -229,7 +271,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -237,10 +281,13 @@
 		9E750CC51FF74C8E00012828 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"ADDITIONAL_SDKS[arch=*]" = arm64;
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD)";
 				CODE_SIGN_STYLE = Automatic;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -252,6 +299,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
